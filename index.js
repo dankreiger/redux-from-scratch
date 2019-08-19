@@ -1,6 +1,18 @@
-import rootReducer from "./src/reducers/root.reducer";
-import { createStore1 } from "./src/store/createStore1";
-import { createStore2 } from "./src/store/createStore2";
+import "./lib";
+import "./src/scss";
+import store from "./src/store";
 
-const store = createStore1(rootReducer);
 window.store = store;
+
+document.querySelector("input").addEventListener("input", e => {
+  store.dispatch({ type: "UPDATE_WOOFER", payload: e.target.value });
+});
+
+const render = () => {
+  document.getElementById(
+    "app"
+  ).innerHTML = store.getState().wooferReducer.breed;
+};
+
+store.subscribe(render);
+render();
