@@ -1,6 +1,6 @@
 import { combineReducers } from "../lib/combineReducers";
-import personReducer from "./person.reducer";
+import wooferReducer from "./woofer.reducer";
 
 export default combineReducers({
-  person: personReducer
+  wooferReducer
 });

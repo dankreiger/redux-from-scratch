@@ -1,6 +1,6 @@
 import { createStore1 as createStore } from "../createStore1";
-import { wooferReducer } from "../../utils/dummy.reducer";
 import { combineReducers } from "../../lib/combineReducers";
+import wooferReducer from "../../reducers/woofer.reducer";
 describe("createStore1", () => {
   it("exposes redux api", () => {
     const store = createStore(wooferReducer);
