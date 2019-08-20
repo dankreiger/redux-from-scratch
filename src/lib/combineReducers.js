@@ -1,4 +1,4 @@
-import logCss from "../helpers/logger";
+import logger from "../helpers/logger";
 
 export function combineReducers(reducers) {
   // First get an array with all the keys of the reducers (the reducer names)
@@ -14,15 +14,15 @@ export function combineReducers(reducers) {
       const reducer = reducers[key];
       // Get the the previous state
       const previousStateForKey = state[key];
-      logCss(previousStateForKey, "previous state", "orange");
 
       // Get the next state by running the reducer
       const nextStateForKey = reducer(previousStateForKey, action);
       // Update the new state for the current reducer
       nextState[key] = nextStateForKey;
 
-      logCss(action, "action", "blue");
-      logCss(nextState, "new state", "green");
+      if (i === reducerKeys.length - 1) {
+        logger(previousStateForKey, action, nextState);
+      }
     }
     return nextState;
   };

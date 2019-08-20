@@ -5,11 +5,18 @@ import store from "./src/store";
 
 window.store = store;
 
-const render = () => {
+const renderBreed = () => {
   document.getElementById(
-    "app"
+    "breedText"
   ).innerHTML = store.getState().wooferReducer.breed;
 };
 
-store.subscribe(render);
-render();
+const renderAsyncData = () => {
+  const { data } = store.getState().dataReducer;
+  document.getElementById("dataText").innerHTML = data.map(d => d.title);
+};
+
+store.subscribe(renderBreed);
+store.subscribe(renderAsyncData);
+renderBreed();
+renderAsyncData();

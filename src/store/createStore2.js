@@ -1,6 +1,14 @@
+//@ts-check
 import { EventEmitter } from "events";
 
-// second variation of createStore
+/**
+ * @TODO improve JSDocs or use typescript
+ */
+
+/**
+ * @description createStore var II
+ * @param {Function} reducer
+ */
 export const createStore2 = reducer => ({
   _state: reducer(undefined, "redux-init"),
   _stateEmitter: new EventEmitter(),

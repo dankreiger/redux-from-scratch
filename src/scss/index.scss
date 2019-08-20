@@ -2,8 +2,9 @@ body {
   padding-top: 300px;
   background: #000000;
   color: #ffffff;
-  #app {
+  #breedText {
     font-size: 3em;
+    word-break: break-all;
   }
   input {
     color: #ffffff;

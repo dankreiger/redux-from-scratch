@@ -1,6 +1,9 @@
-// first variation of createStore
-export const createStore1 = (reducer, initialState) => {
-  let state = initialState;
+import { injectMiddleware } from "../lib/injectMiddleware";
+/**
+ * @description createStore var I
+ * */
+export const createStore1 = (reducer, preloadedState, enhancer) => {
+  let state = preloadedState;
   let listeners = [];
 
   const getState = () => state;
@@ -17,6 +20,7 @@ export const createStore1 = (reducer, initialState) => {
       listeners = listeners.filter(l => l !== listener);
     };
   };
+  injectMiddleware(enhancer);
 
   dispatch({});
   return { getState, dispatch, subscribe };
