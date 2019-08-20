@@ -1,7 +1,7 @@
 import "babel-polyfill";
-import store from "./src/store";
-import { updateWoofer } from "./src/actions/woofer.actions";
-import { getDataBegin } from "./src/actions/data.actions";
+import store from "./../../store";
+import { updateWoofer } from "./../../actions/woofer.actions";
+import { getDataBegin } from "./../../actions/data.actions";
 
 document
   .querySelector("input")

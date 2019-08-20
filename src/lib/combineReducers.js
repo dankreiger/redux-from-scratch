@@ -1,4 +1,4 @@
-import logger from "../helpers/logger";
+import logger from "../utils/logger";
 
 export function combineReducers(reducers) {
   // First get an array with all the keys of the reducers (the reducer names)

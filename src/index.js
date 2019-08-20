@@ -1,19 +1,18 @@
-import "./lib";
-import "./src/scss";
-import "./domListeners";
-import store from "./src/store";
+import './assets/scss';
+import './assets/js';
+import store from './store';
 
 window.store = store;
 
 const renderBreed = () => {
   document.getElementById(
-    "breedText"
+    'breedText'
   ).innerHTML = store.getState().wooferReducer.breed;
 };
 
 const renderAsyncData = () => {
   const { data } = store.getState().dataReducer;
-  document.getElementById("dataText").innerHTML = data.map(d => d.title);
+  document.getElementById('dataText').innerHTML = data.map(d => d.title);
 };
 
 store.subscribe(renderBreed);
