@@ -3,4 +3,10 @@ import rootReducer from "../reducers/root.reducer";
 import applyMiddleware from "../lib/applyMiddleware";
 import thunk from "../lib/thunk";
 
-export default createStore1(rootReducer, undefined, applyMiddleware(thunk));
+const middlewares = [thunk];
+
+export default createStore1(
+  rootReducer,
+  undefined,
+  applyMiddleware(...middlewares)
+);
