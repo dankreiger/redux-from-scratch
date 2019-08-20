@@ -14,5 +14,5 @@ $ npm start
 
 ### TODO:
 
-- Redo all of this in typescript
-- Write tests first
+- Write tests first (TypeScript)
+- Redo all of this in TypeScript
