@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
+    "test:ci": "jest --ci",
     "start": "parcel index.html"
   },
   "keywords": [],
